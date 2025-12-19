@@ -1,4 +1,4 @@
-APLIKASI PENDAFTARAN MAHASISWA
+📋 Aplikasi Pendaftaran Mahasiswa
 
 Aplikasi Pendaftaran Mahasiswa adalah aplikasi web sederhana berbasis JavaScript murni (Vanilla JS) yang digunakan untuk mengelola data pendaftaran mahasiswa. Data disimpan secara lokal menggunakan Local Storage browser, sehingga tidak memerlukan database atau server backend.
 
