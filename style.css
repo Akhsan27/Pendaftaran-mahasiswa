@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "montserrat", arial, sans-serif;
+  background: #3e8c86;
+  background: linear-gradient(84deg, rgba(62, 140, 134, 1) 35%, rgba(61, 0, 153, 1) 56%);
+}
+
+nav {
+  height: 10vh;
+  width: 100%;
+  background: #3dccfc;
+  background: linear-gradient(
+    13deg,
+    rgba(61, 204, 252, 1) 35%,
+    rgba(81, 158, 196, 1) 56%
+  );
+  color: white;
+  display: flex;
+  box-shadow: 2px 5px #888888;
+  justify-content: center;
+}
+
+nav h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3e8c86;
+  background: linear-gradient(
+    84deg,
+    rgba(62, 140, 134, 1) 35%,
+    rgba(61, 0, 153, 1) 56%
+  );
+}
+
+.container-table {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+  background: #3e8c86;
+  background: linear-gradient(84deg, rgba(62, 140, 134, 1) 35%, rgba(61, 0, 153, 1) 56%);
+}
+
+.container-table div {
+  width: 70%;
+  background-color: #5c6d6b;
+  display: flex;
+  justify-content: center;
+}
+
+.container-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid gray;
+}
+
+.container-table th {
+    background-color: black;
+    color: white;
+    padding: 3px;
+    border-right: 2px solid gray;
+}
+
+.container-table td {
+    color: white;
+    background-color: #5c6d6b;
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+}
+
+.wrapper {
+  padding: 20px 10px 20px 10px;
+  margin: 30px;
+  box-shadow: 2px 1px #888888;
+  width: 30%;
+  border-radius: 15px;
+  background: #3dccfc;
+  background: linear-gradient(
+    13deg,
+    rgba(61, 204, 252, 1) 35%,
+    rgba(81, 158, 196, 1) 56%
+  );
+}
+
+.label-form {
+  margin: 5px;
+}
+
+.label-form label {
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+}
+
+.label-form input {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  font-size: 17px;
+  border: none;
+  padding: 3px;
+  outline: #888888;
+  color: #888888;
+}
+
+.label-form select {
+  display: block;
+  width: 100%;
+  font-size: 17px;
+  padding: 3px;
+  color: #888888;
+}
+
+.label-form button{
+  color: white;
+  background-color: #126783;
+  padding: 10px;
+  outline: none;
+  border: 2px solid gray;
+  position: relative;
+  font-size: 15px;
+  border-radius: 15px;
+}
+
+.label-form button:hover{
+  background-color: #3dccfc;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Pendaftaran Mahasiswa</h1>
+    </nav>
+    <div class="container">
+      <div class="wrapper">
+        <div class="" id="error"></div>
+        <form action="">
+          <div class="label-form">
+            <label for="username">Username : </label>
+            <input type="text" id="username" name="username" required/>
+          </div>
+          <div class="label-form">
+            <label for="dateBirth">Tanggal Lahir : </label>
+            <input type="date" id="dateBirth" name="dateBirth" required />
+          </div>
+          <div class="label-form">
+            <label for="addres">Alamat :</label>
+            <input type="text" id="addres" id="addres" name="addres" required />
+          </div>
+          <div class="label-form">
+            <label for="jurusan">Jurusan :</label>
+            <select name="jurusan" id="jurusan">
+              <option value="1">Komputer</option>
+              <option value="2">Management</option>
+              <option value="3">Pendidikan</option>
+              <option value="3">Teknik</option>
+            </select>
+          </div>
+          <div class="label-form">
+            <button type="submit" id="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const form = document.querySelector("form");
+      const error = document.getElementById("error");
+
+      function formatDate(dateBirth) {
+        const dateObj = new Date(dateBirth);
+        return dateObj.toLocaleDateString("id-ID", {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        });
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const username = form.username.value.trim();
+        const dateBirth = form.dateBirth.value.trim();
+        const formattedDate = formatDate(dateBirth);
+        const addres = form.addres.value.trim();
+        const jurusan = form.jurusan.options[form.jurusan.selectedIndex].text;
+
+        if (!username || !dateBirth  || !addres || !jurusan) {
+          error.textContent = "teks ini harus diisikan";
+          error.style.color = "red";
+          return;
+        }
+        const mahasiswa = {
+          username,
+          rawDate: dateBirth,
+          dateBirth: formattedDate,
+          addres,
+          jurusan
+        }
+
+        localStorage.setItem('mahasiswa',JSON.stringify(mahasiswa))
+
+        window.location.href = "daftar.html";
+      });
+    </script>
+  </body>
+</html>

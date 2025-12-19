@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Daftar Mahasiswa</h1>
+    </nav>
+    <div class="container-table">
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Name</th>
+              <th>Tanggal Lahir</th>
+              <th>Alamat</th>
+              <th>Jurusan</th>
+              <th>Umur</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Akhsan</td>
+              <td>30 September 2004</td>
+              <td>Cilongok</td>
+              <td>Komputer</td>
+              <td>13</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      const data = JSON.parse(localStorage.getItem("mahasiswa"));
+      const tBody = document.querySelector("tbody");
+      let no = 2;
+
+      if (data) {
+        const birthYear = new Date(data.rawDate).getFullYear();
+        const currentYear = new Date().getFullYear();
+        const age = currentYear - birthYear;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+             <td>${no++}</td>
+             <td>${data.username}</td>
+             <td>${data.dateBirth}</td>
+             <td>${data.addres}</td>
+             <td>${data.jurusan}</td>
+             <td>${age}</td>
+        `;
+
+        tBody.innerHTML = "";
+        tBody.appendChild(row);
+      }
+    </script>
+  </body>
+</html>
